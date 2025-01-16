@@ -15,4 +15,12 @@
 -- | 2019 | Houston Astros                | 107       |
 -- | 2004 | St. Louis Cardinals           | 105       |
 
-SELECT year, name, MAX(wins) FROM teams WHERE year >= 1960 GROUP BY year ORDER BY MAX(wins) DESC;
+
+SELECT year, MAX(wins) 
+FROM teams 
+WHERE year >= 1960 
+GROUP BY year 
+ORDER BY MAX(wins) DESC;
+
+-- cant actually use name because there could be years where they have the same year, 
+-- we could use the query to create a table then run a query off of that table
